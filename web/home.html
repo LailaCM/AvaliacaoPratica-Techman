@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Equipamentos</title>
+  <link rel="stylesheet" href="login.css" />
+  <style>
+    body{font-family:Arial,Helvetica,sans-serif;background:#f6f6f6;padding:20px}
+    .wrap{max-width:1000px;margin:0 auto}
+    h1{color:#113}
+    .row{display:flex;gap:20px;align-items:flex-start}
+    .col{background:white;padding:12px;border-radius:6px;box-shadow:0 2px 6px rgba(0,0,0,0.06)}
+    .col.small{width:320px}
+    .col.big{flex:1}
+    .equip{border-bottom:1px solid #eee;padding:8px 0}
+    .equip h3{margin:0;font-size:16px}
+    label{display:block;margin-top:8px;font-size:13px}
+    input[type=text],textarea{width:100%;padding:8px;margin-top:6px;border:1px solid #ddd;border-radius:4px}
+    button{margin-top:8px;padding:8px 12px;border-radius:4px;border:none;background:#3fbdb8;color:white;cursor:pointer}
+    .comentario{font-size:13px;color:#333;margin-top:6px;padding-left:8px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Equipamentos</h1>
+    <div id="infoUser"></div>
+
+    <div class="row">
+      <div class="col small">
+        <h3>Novo Equipamento</h3>
+        <label>Nome<input id="eqNome" type="text" /></label>
+        <label>Imagem<input id="eqImagem" type="text" placeholder="nomeArquivo.png" /></label>
+        <label>Descrição<textarea id="eqDesc" rows="4"></textarea></label>
+        <label><input id="eqAtivo" type="checkbox" checked /> Ativo</label>
+        <button id="btnCriarEquip">Criar equipamento</button>
+        <div id="msgEquip" style="color:#c0392b;margin-top:8px"></div>
+      </div>
+
+      <div class="col big">
+        <h3>Lista de Equipamentos</h3>
+        <div id="listaEquip"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="home.js"></script>
+</body>
+</html>

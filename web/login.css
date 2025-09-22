@@ -1,0 +1,64 @@
+/* web/login.css - estilo inspirado no layout enviado */
+:root{
+  --bg:#d8efef;
+  --card:#f3f1f0;
+  --accent:#3fbdb8;
+  --accent-dark:#34a9a6;
+  --key-border:#93d5d2;
+  --key-bg:#ffffff;
+  --key-hover:#bff0ee;
+  --enter-bg:#3fbdb8;
+  --enter-enabled:#34a9a6;
+  --error:#c0392b;
+}
+
+*{box-sizing:border-box;font-family: "Helvetica Neue", Arial, sans-serif}
+html,body{height:100%;margin:0;background:var(--bg)}
+.page{min-height:100vh;display:flex;flex-direction:column;align-items:center;padding-top:40px}
+
+/* brand */
+.brand-box{
+  width:260px;height:60px;background:linear-gradient(90deg,var(--accent),#5fd0cc);
+  display:flex;align-items:center;justify-content:center;color:white;font-size:30px;font-weight:700;
+  border-radius:2px;letter-spacing:6px;margin-bottom:18px;
+}
+.brand-box .accent{color:#003d3d;margin-left:6px;font-weight:700}
+
+/* card */
+.login-card{
+  width:360px;background:var(--card);box-shadow:0 6px 16px rgba(0,0,0,0.12);
+  padding:28px;border-radius:2px;display:flex;flex-direction:column;align-items:center;
+}
+
+/* password display */
+.pwd-display{
+  width:80%;text-align:center;border-bottom:2px solid var(--accent);padding:8px 0;margin-bottom:18px;font-size:18px;color:#2b6;
+  letter-spacing:6px;font-weight:600;
+}
+
+/* keyboard grid */
+.keyboard{
+  width:260px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;
+}
+
+.key{
+  height:64px;border-radius:50%;border:2px solid var(--key-border);background:var(--key-bg);
+  display:flex;align-items:center;justify-content:center;font-size:20px;cursor:pointer;
+  transition: all 0.12s ease;box-shadow:0 2px 4px rgba(0,0,0,0.05);
+  user-select:none;
+}
+
+.key:hover{ background:var(--key-hover); transform:translateY(-2px) scale(1.02);}
+
+/* enter / clear styles */
+.key-clear{border-radius:50%;font-weight:700}
+.key-enter{background:transparent;border:2px solid var(--key-border);font-size:20px}
+.key-enter[aria-disabled="false"]{background:var(--enter-bg);color:white;border-color:var(--enter-bg)}
+.key-enter.enabled:hover{ background:var(--enter-enabled); transform:none; }
+
+.error{color:var(--error);margin-top:14px;font-weight:700}
+
+@media(max-width:420px){
+  .login-card{width:92%}
+  .keyboard{width:100%}
+}

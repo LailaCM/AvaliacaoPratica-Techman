@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TechMan - Login</title>
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+  <main class="page">
+    <header class="brand">
+      <div class="brand-box">TECH<span class="accent">MAN</span></div>
+    </header>
+
+    <section class="login-card" aria-label="Login">
+      <div class="pwd-display" id="pwdDisplay">------</div>
+
+      <div class="keyboard" id="keyboard" role="group" aria-label="Teclado numérico">
+        <button class="key" data-value="1">1</button>
+        <button class="key" data-value="2">2</button>
+        <button class="key" data-value="3">3</button>
+
+        <button class="key" data-value="4">4</button>
+        <button class="key" data-value="5">5</button>
+        <button class="key" data-value="6">6</button>
+
+        <button class="key" data-value="7">7</button>
+        <button class="key" data-value="8">8</button>
+        <button class="key" data-value="9">9</button>
+
+        <button class="key key-clear" id="btnClear">C</button>
+        <button class="key" data-value="0">0</button>
+        <button class="key key-enter" id="btnEnter" aria-disabled="true" disabled>⤶</button>
+      </div>
+
+      <div id="errorMsg" class="error" role="alert" aria-live="assertive" hidden>ERRO: Senha incorreta.</div>
+    </section>
+  </main>
+
+  <script src="login.js"></script>
+</body>
+</html>
