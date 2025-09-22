@@ -5,6 +5,19 @@ const { PrismaClient } = require('@prisma/client');
 const router = express.Router();
 const prisma = new PrismaClient();
 
+router.get('/comentarios/equipamento/:equipId', async (req, res) => {
+  const { equipId } = req.params;
+  try {
+    const comentarios = await prisma.comentario.findMany({
+      where: { equipamento: Number(equipId) },
+      orderBy: { data: 'desc' } 
+    });
+    res.json(comentarios);
+  } catch (err) {
+    res.status(500).json({ error: 'Erro ao buscar comentários do equipamento' });
+  }
+});
+
 router.get('/', async (req, res) => {
   const rotas = {
     equipamentos: '/equipamentos',

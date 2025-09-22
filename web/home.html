@@ -1,35 +1,46 @@
-<!doctype html>
-<html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Equipamentos</title>
-  <link rel="stylesheet" href="login.css" />
-  <link rel="stylesheet" href="home.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechMan - Equipamentos</title>
+    <link rel="stylesheet" href="home.css">
 </head>
 <body>
-  <div class="wrap">
-    <h1>Equipamentos</h1>
-    <div id="infoUser"></div>
+    <header>
+        <img src="assets/techman.png" alt="Logo TECHMAN" style="max-width: 200px; height: auto;">
+        <nav>    
+            <a href="#" id="abrir-novo-equip" class="btn-header">Novo Equipamento</a>
+            <a href="../login/login.html"><img src="assets/logout_sair.png" alt=""></a>
+        </nav>
+    </header>
+    
+    <main>
+        <div id="lista-equipamento"></div>
 
-    <div class="row">
-      <div class="col small">
-        <h3>Novo Equipamento</h3>
-        <label>Nome<input id="eqNome" type="text" /></label>
-        <label>Imagem<input id="eqImagem" type="text" placeholder="nomeArquivo.png" /></label>
-        <label>Descrição<textarea id="eqDesc" rows="4"></textarea></label>
-        <label><input id="eqAtivo" type="checkbox" checked /> Ativo</label>
-        <button id="btnCriarEquip">Criar equipamento</button>
-        <div id="msgEquip" style="color:#c0392b;margin-top:8px"></div>
-      </div>
+        <div id="modal" style="display:none">
+            <div id="detalhes"></div>
+            <button id="fechar-modal">Fechar</button>
+        </div>
 
-      <div class="col big">
-        <h3>Lista de Equipamentos</h3>
-        <div id="listaEquip"></div>
-      </div>
-    </div>
+        <div id="modal-novo-equip" style="display:none;">
+  <div class="modal-content">
+    <button class="fechar-btn" id="fechar-novo-equip">&times;</button>
+    <h2>Novo Equipamento</h2>
+    <form id="form-novo-equip">
+      <input type="text" id="novo-nome" placeholder="Nome">
+      <input type="url" id="novo-imagem" placeholder="URL da imagem">
+      <textarea id="novo-descricao" placeholder="Descrição"></textarea>
+      <label class="checkbox-label">
+        <input type="checkbox" id="novo-ativo" checked> Ativo
+      </label>
+      <button type="submit" id="btn-enviar-novo">Adicionar</button>
+    </form>
   </div>
+</div>
 
-  <script src="home.js"></script>
+    </main>
+
 </body>
+<script src="home.js"></script>
 </html>
